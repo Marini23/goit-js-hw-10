@@ -29,15 +29,15 @@ select.addEventListener(`change`, onChangeBreed);
 function onChangeBreed(e) {
     e.preventDefault();
     let breedId = e.target.value;
-    console.log(breedId);
+    // console.log(breedId);
     loader.style.visibility = `visible`;
     div.style.visibility = `hidden`;
     fetchCatByBreed(breedId)
         .then(data => {
-            console.log(data);
+            // console.log(data);
             loader.style.visibility = `hidden`;
             div.style.visibility = `visible`;
-            console.log(data);
+            // console.log(data);
             div.innerHTML = data.map(element =>
                 `<div><img src="${element.url}" alt="photo cat" width="500" height="400"/></div>`).join(``)
             data.map(el => el.breeds.forEach(cat => {
